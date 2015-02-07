@@ -8,7 +8,6 @@
   <meta name="author" content="">
 
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css">
         <link rel="stylesheet" href="/app.css" >
     </head>
     <body ng-app='app' ng-controller='ApplicationCtrl'>
@@ -31,16 +30,17 @@
         <li><a class = 'register' href="/#/register">Register</a></li>
         <li><a class = 'login' href="/#/login">Login</a></li>
       </ul>
+      <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
+          <li><a class='logout' href="#" ng-click='logout()'>Logout</a></li>
+      </ul>
+      <p ng-if='currentUser' class="navbar-text navbar-right">
+          Signed in as {{currentUser.username}}
+      </p>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
 
-<ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
-    <li><a class='logout' href="#" ng-click='logout()'>Logout</a></li>
-</ul>
-<p ng-if='currentUser' class="navbar-text navbar-right">
-    Signed in as {{currentUser.username}}
-</p>
+
 
 <!--
     <nav class= 'navbar navbar-default'>
