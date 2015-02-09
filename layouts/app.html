@@ -13,9 +13,9 @@
     <body ng-app='app' ng-controller='ApplicationCtrl'>
 
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="CollapseCtrl">
   <div class="container">
-    <div class="navbar-header" ng-controller="CollapseCtrl"> <!--ng-controller="CollapseCtrl" -->
+    <div class="navbar-header"> <!--ng-controller="CollapseCtrl" -->
     <button type="button" ng-click="isCollapsed = !isCollapsed" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <!--ng-click="isCollapsed = !isCollapsed" -->
         <span class="sr-only">Toggle navigation</span>
