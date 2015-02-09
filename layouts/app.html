@@ -28,9 +28,9 @@
     </div>
     <div  collapse="isCollapsed"> <!--/collapse="isCollapsed" class="collapse navbar-collapse" id="navbar"-->
       <ul class="nav navbar-nav">
-        <li class="active"><a class='posts' href="/#/">Posts {{isCollapsed}}</a></li>
-        <li><a class = 'register' href="/#/register">Register</a></li>
-        <li><a class = 'login' href="/#/login">Login</a></li>
+        <li class="active"><a class='posts' href="/#/" ng-click="isCollapsed = !isCollapsed">Posts {{isCollapsed}} </a></li>
+        <li><a class = 'register' href="/#/register" ng-click="isCollapsed = !isCollapsed">Register</a></li>
+        <li><a class = 'login' href="/#/login" ng-click="isCollapsed = !isCollapsed">Login</a></li>
       </ul>
       <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
           <li><a class='logout' href="#" ng-click='logout()'>Logout</a></li>
