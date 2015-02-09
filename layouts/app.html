@@ -23,17 +23,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{isCollapsed}}
       <a class="navbar-brand" href="/#/">Dog Diary</a>
     </div>
     <div  collapse="isCollapsed"> <!--/collapse="isCollapsed" class="collapse navbar-collapse" id="navbar"-->
       <ul class="nav navbar-nav">
-        <li class="active"><a class='posts' href="/#/" ng-click="isCollapsed = !isCollapsed">Posts {{isCollapsed}} </a></li>
+        <li class="active"><a class='posts' href="/#/" ng-click="isCollapsed = !isCollapsed">Posts</a></li>
         <li><a class = 'register' href="/#/register" ng-click="isCollapsed = !isCollapsed">Register</a></li>
         <li><a class = 'login' href="/#/login" ng-click="isCollapsed = !isCollapsed">Login</a></li>
       </ul>
       <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
-          <li><a class='logout' href="#" ng-click='logout()'>Logout</a></li>
+          <li><a class='logout' href="/#/logout" ng-click="isCollapsed = !isCollapsed">Logout</a></li>
       </ul>
       <p ng-if='currentUser' class="navbar-text navbar-right">
           Signed in as {{currentUser.username}}
