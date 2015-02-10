@@ -16,8 +16,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="CollapseCtrl">
   <div class="container">
     <div class="navbar-header"> <!--ng-controller="CollapseCtrl" -->
-    <button type="button" ng-click="isCollapsed = !isCollapsed" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <!--ng-click="isCollapsed = !isCollapsed" -->
+    <button type="button" ng-click="isCollapsed = !isCollapsed" >
+        <!--class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" -->
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -32,6 +32,7 @@
         <li><a class = 'login' href="/#/login" ng-click="isCollapsed = !isCollapsed">Login</a></li>
       </ul>
       <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
+          <li><a class='dogname' href="/#/dogname" ng-click="isCollapsed = !isCollapsed">Dog Name</a></li>
           <li><a class='logout' href="/#/logout" ng-click="isCollapsed = !isCollapsed">Logout</a></li>
       </ul>
       <p ng-if='currentUser' class="navbar-text navbar-right">
