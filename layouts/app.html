@@ -23,17 +23,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/#/" ng-click="isCollapsed = true">Dog Diary</a>
+      <a class="navbar-brand" href="/#/">Dog Diary</a>
     </div>
     <div  collapse="isCollapsed"> <!--/collapse="isCollapsed" class="collapse navbar-collapse" id="navbar"-->
       <ul class="nav navbar-nav">
-        <li class="active"><a class='posts' href="/#/" ng-click="isCollapsed = !isCollapsed">Posts</a></li>
-        <li><a class = 'register' href="/#/register" ng-click="isCollapsed = !isCollapsed">Register</a></li>
-        <li><a class = 'login' href="/#/login" ng-click="isCollapsed = !isCollapsed">Login</a></li>
+        <li class="active"><a class='posts' href="/#/">Posts</a></li>
+        <li><a class = 'register' href="/#/register">Register</a></li>
+        <li><a class = 'login' href="/#/login">Login</a></li>
       </ul>
       <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
-          <li><a class='dogname' href="/#/dogname" ng-click="isCollapsed = !isCollapsed">Dog Name</a></li>
-          <li><a class='logout' href="/#/logout" ng-click="isCollapsed = !isCollapsed">Logout</a></li>
+          <li><a class='dogname' href="/#/dogname">Dog Name</a></li>
+          <li><a class='logout' href="/#/logout">Logout</a></li>
       </ul>
       <p ng-if='currentUser' class="navbar-text navbar-right">
           Signed in as {{currentUser.username}}
