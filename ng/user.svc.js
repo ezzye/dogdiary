@@ -7,6 +7,7 @@ angular.module('app')
             return response.data
         })
     }
+    
     svc.login =function (username, password) {
         return $http.post('/api/sessions', {
             username: username,
@@ -17,9 +18,10 @@ angular.module('app')
             return svc.getUser()
         })
     }
-    svc.register = function (username, password) {
+    svc.register = function (username, dogname, password) {
         return $http.post('/api/users', {
             username: username,
+            dogname: dogname,
             password: password
         }).then(function () {
             return svc.login(username, password)
