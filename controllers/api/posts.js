@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     var post = new Post({body: req.body.body})
+    post.dogname = req.body.dogname
     post.username = req.auth.username
     post.save(function (err, post) {
         if (err) { return next(err)
