@@ -3,7 +3,8 @@ angular.module('app')
     $scope.addPost = function () {
         if($scope.postBody) {
             PostsSvc.create({
-                body: $scope.postBody
+                body: $scope.postBody,
+                dogname: $scope.currentUser.dogname
             }).then(function ()
             {
                 $scope.postBody=null
