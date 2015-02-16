@@ -16,7 +16,6 @@ router.post('/', function (req, res, next) {
         body: req.body.body,
         dogname: req.body.dogname
     })
-    console.log(post) // log out post
     post.username = req.auth.username
     post.save(function (err, post) {
         if (err) { return next(err)
