@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res, next) {
     var post = new Post({
         body: req.body.body,
-        dogneme: req.body.dogname
+        dogname: req.body.dogname
     })
     console.log(post) // log out post
     post.username = req.auth.username
