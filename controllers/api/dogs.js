@@ -2,19 +2,18 @@ var Post = require('../../models/dog')
 var websockets = require('../../websockets')
 var router = require('express').Router()
 router.get('/', function (req, res, next) {
-    Post.find()
-    .sort('-date')
-    .exec(function(err, posts) {
+    Dog.find()
+    .exec(function(err, dogs) {
         if (err) { return next(err)
         }
-        res.json(posts)
+        res.json(dogs)
     })
 })
 
 router.post('/', function (req, res, next) {
-    var post = new Post({
-        body: req.body.body,
-        dogname: req.body.dogname
+    var dog = new Dog({
+        dogname: req.body.dogname,
+        ownername: req.body.ownername
     })
     post.username = req.auth.username
     post.save(function (err, post) {
