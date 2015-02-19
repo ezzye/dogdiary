@@ -1,7 +1,7 @@
 angular.module('app')
 .controller('DogsCtrl', function($scope,DogsSvc) {
     $scope.addDog = function () {
-        if($scope.dogs) {
+        if($scope.dogname) {
             PostsSvc.create({
                 body: $scope.postBody,
                 dogname: $scope.currentUser.dogname
