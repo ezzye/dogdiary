@@ -7,6 +7,7 @@ router.use(require('../auth'))
 router.use('/api/posts', require('./api/posts'))
 router.use('/api/sessions', require('./api/sessions'))
 router.use('/api/users', require('./api/users'))
+router.use('/api/dogs', require('./api/dogs'))
 router.use(require('./static'))
 
 module.exports = router
