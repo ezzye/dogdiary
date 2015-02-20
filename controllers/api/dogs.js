@@ -15,7 +15,7 @@ router.post('/', function (req, res, next) {
         dogname: req.body.dogname,
         ownername: req.body.ownername
     })
-    dog.ownername = req.auth.username
+    //dog.ownername = req.auth.username
     dog.save(function (err, post) {
         if (err) { return next(err)
         }
