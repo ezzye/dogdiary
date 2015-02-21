@@ -4,10 +4,24 @@
             <label>Username</label>
             <input class = "form-control" type = "text" ng-model="username">
         </div>
-        <div class = "form-group">
+      <!--  <div class = "form-group">
             <label>Dog name</label>
-            <input class = "form-control" type = "text" ng-model="dogname">
-        </div>
+            <input class = "form-control" type = "text" ng-model="dogname"> -->
+            
+ 
+            <!-- label for (key, value) in object -->
+
+            <select id="dogSel" ng-model="dogs" ng-options="dogname for dogname in dogs">
+              <option value="">[No color]</option>
+            </select><br />
+            <br />
+            <strong>Selected dog:</strong> {{dogValue}}<br />
+            
+            
+            
+            
+            
+        <!-- </div> -->
         <div class = "form-group">
             <label>Password</label>
             <input class = "form-control" type = "password" ng-model="password">
