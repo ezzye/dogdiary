@@ -1,4 +1,4 @@
-var Post = require('../../models/dog')
+var Dog = require('../../models/dog')
 var websockets = require('../../websockets')
 var router = require('express').Router()
 router.get('/', function (req, res, next) {
