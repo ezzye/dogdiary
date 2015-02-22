@@ -8,9 +8,6 @@
         <div class = "form-group">
             <label>Dog name</label>
             <input class = "form-control" type = "text" ng-model="dogname">
-            <select ng-model="dogs"
-                ng-options="dog as dog.dogname for dog in dogs">
-            </select>
         </div>
 
         <div class = "form-group">
@@ -19,4 +16,10 @@
         </div>
         <input class = "btn btn-success btn-lg btn-block" type = "submit" value ="Register">
     </form>
+    <ul class='list-group'>
+        <li ng-repeat="dog in dogs" class='list-group-item'>
+            <span>- {{ dog.dogname }} - </span>
+            <strong>@{{ dog.ownername }}</strong>
+        </li>
+    </ul>
 </div>
