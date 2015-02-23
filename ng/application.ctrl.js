@@ -7,5 +7,7 @@ angular.module('app')
     $scope.$on('dogadded', function (_, dog) {
         $scope.currentDog = dog;
     })
+    console.log(user)
+    console.log(dog)
 
 })
