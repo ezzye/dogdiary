@@ -2,6 +2,7 @@ angular.module('app')
 .controller('DogsCtrl', function($scope,DogsSvc) {
     $scope.addDog = function () {
         if($scope.dogname) {
+            console.log($scope.currentUser)
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
@@ -9,7 +10,7 @@ angular.module('app')
             ).then(function ()
             {
                 $scope.dogname=null
-                console.log("This is where the current user goes")
+                
             })
         }
     }
