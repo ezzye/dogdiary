@@ -9,7 +9,7 @@ angular.module('app')
             ).then(function ()
             {
                 $scope.dogname=null
-                console.log($scope.currentUser)
+                console.log("This is where the current user goes")
             })
         }
     }
