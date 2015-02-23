@@ -30,10 +30,10 @@
         <li class="active"><a class='posts' href="/#/">Posts</a></li>
         <li><a class = 'register' href="/#/register">Register</a></li>
         <li><a class = 'login' href="/#/login">Login</a></li>
-        <li><a class = 'login' href="/#/dogs">Add Dog</a></li>
       </ul>
       <ul ng-if='currentUser' class='nav navbar-nav navbar-right'>
-          <li><a class='logout' href="/#/logout">Logout</a></li>
+        <li><a class = 'login' href="/#/dogs">Add Dog</a></li>
+        <li><a class='logout' href="/#/logout">Logout</a></li>
       </ul>
       <p ng-if='currentUser' class="navbar-text navbar-right">
           Signed in as {{currentUser.username}}
