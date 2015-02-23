@@ -7,7 +7,6 @@ angular.module('app')
                 ownername: $scope.currentUser.username
             }).then(function (dog)
             {
-                $scope.$emit('dogadded', dog)
                 $scope.dogname=null
             })
         }
