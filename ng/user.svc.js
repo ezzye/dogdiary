@@ -26,4 +26,10 @@ angular.module('app')
             return svc.login(username, password)
         })
     }
+    svc.updateDog = function (username, dogname) {
+        return $http.post('/api/users', {
+            username: username,
+            dogname: dogname
+        })   
+    }
 })

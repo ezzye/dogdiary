@@ -8,7 +8,8 @@ angular.module('app')
         })
     }
     
-    $scope.updateDog = function (_id, username, dogname) {
-        UserSvc.updateDog(_id, username, dogname)
+    $scope.updateDog = function (username, dogname) {
+        UserSvc.updateDog(username, dogname)
     }
+    
 })

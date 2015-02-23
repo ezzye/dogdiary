@@ -5,16 +5,12 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }
-            ).then(function ()
+            }).then(function ()
             {
                 $scope.dogname=null
-                
             })
         }
     }
-    
-    
 
     $scope.$on('ws:new_dog', function (_, dog) {
         $scope.$apply(function () {
@@ -25,6 +21,4 @@ angular.module('app')
     DogsSvc.fetch().success(function (dogs) {
         $scope.dogs = dogs
     })
-    
-
 })
