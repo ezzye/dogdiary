@@ -2,7 +2,6 @@ angular.module('app')
 .controller('DogsCtrl', function($scope,DogsSvc) {
     $scope.addDog = function () {
         if($scope.dogname) {
-            console.log($scope.currentUser)
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
