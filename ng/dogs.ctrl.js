@@ -5,8 +5,9 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }).then(function ()
+            }).then(function (dog)
             {
+                $scope.$emit('dogadded', dog)
                 $scope.dogname=null
             })
         }
@@ -21,4 +22,6 @@ angular.module('app')
     DogsSvc.fetch().success(function (dogs) {
         $scope.dogs = dogs
     })
+    
+
 })
