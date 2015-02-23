@@ -17,7 +17,8 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     var user = new User({ username: req.body.username })
-    console.log(req.body.password)
+    console.log("see body below")
+    console.log(req.body)
     bcrypt.hash(req.body.password, 10, function (err, hash) {
         if (err) { 
             console.log("error error error")
