@@ -18,7 +18,7 @@ angular.module('app')
             return svc.getUser()
         })
     }
-    svc.register = function (username, dogname, password) {
+    svc.register = function (username, password) {
         return $http.post('/api/users', {
             username: username,
             password: password
