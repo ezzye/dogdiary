@@ -57,3 +57,19 @@ db.posts.save({
   "user": "alice"
 })
 
+
+//Delete
+
+    //all
+db.posts.remove()
+
+
+    //all alice
+db.posts.remove({ "user": "alice" })
+
+
+    //one alice
+db.posts.remove({ "user": "alice" }, true)
+
+
+
