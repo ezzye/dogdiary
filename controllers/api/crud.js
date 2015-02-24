@@ -49,3 +49,11 @@ db.posts.update({
 }, {
   multi: true
 })
+
+
+db.posts.save({
+  "_id": ObjectId("50691737d386d8fadbd6b01d"),
+  "title": "Second Post",
+  "user": "alice"
+})
+
