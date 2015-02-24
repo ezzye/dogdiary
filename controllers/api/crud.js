@@ -15,7 +15,7 @@ db.posts.update({
   upsert: true
 })
 
-
+//post//
 var User = require('mongoose').model('User');
 
 exports.create = function(req, res, next) {
@@ -43,6 +43,19 @@ db.posts.find({ "user": "alice" })
 db.posts.find({ "user": { $in: ["alice", "bob"] } })
 
 "http://docs.mongodb.org/manual/reference/operator/query/#query-selectors"
+
+//get//
+exports.list = function(req, res, next) {
+  User.find({}, function(err, users) {
+    if (err) {
+      return next(err);
+    } else {
+      res.json(users);
+    }
+  });
+};
+
+
 
     //And
 
