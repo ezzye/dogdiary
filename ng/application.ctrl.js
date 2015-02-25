@@ -4,7 +4,7 @@ angular.module('app')
         $scope.currentUser = user;
     })
     $scope.$on('addDog', function (_, dog) {
-        $scope.currentdog = dog;
+        $scope.currentDog = dog;
     })
 
 })
