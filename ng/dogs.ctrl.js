@@ -8,6 +8,7 @@ angular.module('app')
             }).then(function (dog)
             {
                 $scope.dogname=null
+                $scope.$emit('addDog', dog)
             })
         }
     }
