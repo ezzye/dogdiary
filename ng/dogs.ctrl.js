@@ -9,7 +9,7 @@ angular.module('app')
             {
                 $scope.dogname=null
                 console.log("This is dog record")
-                console.log(dog)
+                console.log(dog.dogname)
                 $scope.$emit('addDog', dog)
                 $location.path('/')
             })
