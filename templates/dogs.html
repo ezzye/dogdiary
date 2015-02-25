@@ -5,11 +5,12 @@
             <div class='input-group'>
                 <input ng-model='dogname' class='form-control' />
                 <span class='input-group-btn'>
-                    <button ng-click='addDog()' class='btn btn-default'>Add or Change Dog</button>
+                    <button ng-click='addDog()' class='btn btn-default'>Pick a Dog</button>
                 </span>
             </div>
         </div>
     </form>
+    <h1 ng-controller='ApplicationCtrl'>List of Dogs</h1>
     <ul class='list-group'>
         <li ng-repeat="dog in dogs" class='list-group-item'>
             <span>- {{ dog.dogname }} - </span>
