@@ -20,7 +20,7 @@ router.post('/', function (req, res, next) {
         if (err) { return next(err)
         }
         websockets.broadcast('new_dog', dog)
-        res.json(201, post)
+        res.json(201, dog)
     })
 })
 
