@@ -8,7 +8,7 @@ angular.module('app')
             }).then(function (dog)
             {
                 console.log("This is dog record")
-                console.log(dog.dogname)
+                console.log(dog)
                 $scope.$emit('addDog', dog)
                 $scope.dogname=null
                 $location.path('/')
