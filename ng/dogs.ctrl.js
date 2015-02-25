@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('DogsCtrl', function($scope,DogsSvc) {
+.controller('DogsCtrl', function($scope,DogsSvc, $location) {
     $scope.addDog = function () {
         if($scope.dogname) {
             DogsSvc.create({
@@ -8,7 +8,9 @@ angular.module('app')
             }).then(function (dog)
             {
                 $scope.dogname=null
+                console.log(dog)
                 $scope.$emit('addDog', dog)
+                $location.path('/')
             })
         }
     }
