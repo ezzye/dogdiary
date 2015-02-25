@@ -7,10 +7,10 @@ angular.module('app')
                 ownername: $scope.currentUser.username
             }).then(function (dog)
             {
-                $scope.dogname=null
                 console.log("This is dog record")
                 console.log(dog.dogname)
                 $scope.$emit('addDog', dog)
+                $scope.dogname=null
                 $location.path('/')
             })
         }
