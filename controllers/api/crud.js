@@ -67,6 +67,43 @@ db.posts.find({ "user": "alice", "commentsCount": { $gt: 10 }  })
 db.posts.find( { $or: [{ "user": "alice" }, { "user": "bob" }] })
 
 
+exports.read = function(req, res) {
+  res.json(req.user);
+};
+
+exports.userByID = function(req, res, next, id) {
+  User.findOne({
+    _id: id
+  }, function(err, user) {
+    if (err) {
+      return next(err);
+    } else {
+      req.user = user;
+      next();
+    }
+  });
+};
+
+
+// route middleware to validate :name
+router.param('name', function(req, res, next, name) {
+    // do validation on name here
+    // blah blah validation
+    // log something so we know its working
+    console.log('doing name validations on ' + name);
+
+    // once validation is done save the new item in the req
+    req.name = name;
+    // go to the next thing
+    next(); 
+});
+
+// route with parameters (http://localhost:8080/hello/:name)
+router.get('/hello/:name', function(req, res) {
+    res.send('hello ' + req.name + '!');
+});
+
+
 //Update
 
 db.posts.update({
@@ -86,6 +123,16 @@ db.posts.save({
   "user": "alice"
 })
 
+exports.update = function(req, res, next) {
+  User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
+    if (err) {
+      return next(err);
+    } else {
+      res.json(user);
+    }
+  });
+
+
 
 //Delete
 
@@ -99,6 +146,16 @@ db.posts.remove({ "user": "alice" })
 
     //one alice
 db.posts.remove({ "user": "alice" }, true)
+
+exports.delete = function(req, res, next) {
+  req.user.remove(function(err) {
+    if (err) {
+      return next(err);
+    } else {
+      res.json(req.user);
+    }
+  })
+};
 
 
 
