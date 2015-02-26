@@ -25,6 +25,9 @@ router.post('/', function (req, res, next) {
             user.save(function (err) {
                 if (err) { return next(err) }
                 console.log("This is user object", user)
+                console.log("This is user object", user.username)
+                console.log("This is user object", user.password)
+                console.log("This is user object", user.dogname)
                 res.send(201)
             })
         })
