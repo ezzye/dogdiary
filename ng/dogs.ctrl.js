@@ -1,7 +1,6 @@
 angular.module('app')
 .controller('DogsCtrl', function($scope,DogsSvc, $location) {
     $scope.addDog = function () {
-        if($scope.dogname) {
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
@@ -13,8 +12,7 @@ angular.module('app')
                 $scope.dogname=null
                 $location.path('/')
             })
-        }
-    }
+    }        
 
     $scope.$on('ws:new_dog', function (_, dog) {
         $scope.$apply(function () {
