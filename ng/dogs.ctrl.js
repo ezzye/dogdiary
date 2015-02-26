@@ -6,8 +6,9 @@ angular.module('app')
                 ownername: $scope.currentUser.username
             }).then(function (dog)
             {
-                console.log("This is dog record")
-                console.log(dog)
+                console.log("This is dog ctrl object", dog)
+                console.log("This is dog ctrl object", dog.ownername)
+                console.log("This is dog ctrl object", dog.dogname)
                 $scope.$emit('addDog', dog)
                 $scope.dogname=null
                 $location.path('/')
