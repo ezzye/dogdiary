@@ -20,6 +20,7 @@ router.post('/', function (req, res, next) {
     post.save(function (err, post) {
         if (err) { return next(err)
         }
+        console.log("This is post object", post)
         websockets.broadcast('new_post', post)
         res.json(201, post)
     })

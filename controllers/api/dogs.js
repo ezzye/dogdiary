@@ -18,6 +18,7 @@ router.post('/', function (req, res, next) {
     dog.save(function (err, post) {
         if (err) { return next(err)
         }
+        console.log("This is dog object", dog)
         websockets.broadcast('new_dog', dog)
         res.json(201, dog)
     })
