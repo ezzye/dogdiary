@@ -16,7 +16,6 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', function (req, res, next) {
-    if (!req.body.dogname) {
         var user = new User({ username: req.body.username })
         bcrypt.hash(req.body.password, 10, function (err, hash) {
             if (err) { 
@@ -27,9 +26,6 @@ router.post('/', function (req, res, next) {
                 res.send(201)
             })
         })
-    }
-    
-    console.log("We know the the dogname")
 })
 
 module.exports =router

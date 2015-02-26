@@ -7,9 +7,4 @@ angular.module('app')
         $location.path('/')
         })
     }
-    
-    $scope.updateDog = function (username, dogname) {
-        UserSvc.updateDog(username, dogname)
-    }
-    
 })

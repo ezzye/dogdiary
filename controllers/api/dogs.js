@@ -18,8 +18,8 @@ router.post('/', function (req, res, next) {
     dog.save(function (err, post) {
         if (err) { return next(err)
         }
-        res.json(201, dog)
         websockets.broadcast('new_dog', dog)
+        res.json(201, dog)
     })
 })
 
