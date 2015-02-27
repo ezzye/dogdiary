@@ -15,14 +15,14 @@ router.post('/', function (req, res, next) {
         dogname: req.body.dogname,
         ownername: req.body.ownername
     })
-    dog.save(function (err, post) {
+    dog.save(function (err, dog) {
         if (err) { return next(err)
         }
         console.log("This is dog object", dog)
         console.log("This is dog object", dog.ownername)
         console.log("This is dog object", dog.dogname)
         websockets.broadcast('new_dog', dog)
-        res.json(201, dog)
+        res.send(201)
     })
 })
 
