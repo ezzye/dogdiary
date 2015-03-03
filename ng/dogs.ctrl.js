@@ -4,12 +4,10 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }).then(function ()
+            }).then(function ($scope)
             {
-                console.log("This is dog ctrl object", dog)
-                console.log("This is dog ctrl object", dog.ownername)
-                console.log("This is dog ctrl object", $scope.dogname)
-                $scope.$emit('addDog', dog)
+                var dogName = $scope.dogname
+                $scope.$emit('addDog',dogName )
                 $scope.dogname=null
                 $location.path('/')
             })

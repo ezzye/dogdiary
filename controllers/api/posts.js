@@ -20,12 +20,8 @@ router.post('/', function (req, res, next) {
     post.save(function (err, post) {
         if (err) { return next(err)
         }
-        console.log("This is post object", post)
-        console.log("This is post object", post.username)
-        console.log("This is post object", post.body)
-        console.log("This is post object", post.dogname)
         websockets.broadcast('new_post', post)
-        res.json(201, post)
+        res.status(201).json(post)
     })
 })
 
