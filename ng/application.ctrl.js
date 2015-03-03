@@ -5,7 +5,7 @@ angular.module('app')
     })
     $scope.$on('addDog', function (_, dog) {
         $scope.currentDog = dog
-        console.log("This is the dog",$scope.currentDog)
+        console.log("This is the dog",$scope.currentDog.dogname)
         console.log("This is the dog object", dog)
     })
 })
