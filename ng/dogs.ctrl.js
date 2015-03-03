@@ -5,7 +5,6 @@ angular.module('app')
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
             }).then(function (dog) {
-                $scope.$emit('addDog',dog)
                 $location.path('/')
             })
     }        
