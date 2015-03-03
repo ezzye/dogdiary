@@ -26,4 +26,11 @@ angular.module('app')
             return svc.login(username, password)
         })
     }
+    
+    scv.updatedog = function (_id, username, dogname) {
+        return $http.put('/api/user', {
+            _id: _id,
+            username: username  
+        })
+    }
 })
