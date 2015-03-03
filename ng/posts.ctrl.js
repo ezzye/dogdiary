@@ -5,12 +5,8 @@ angular.module('app')
             PostsSvc.create({
                 body: $scope.postBody,
                 dogname: $scope.currentUser.dogname
-            }).then(function (post)
+            }).then(function ()
             {
-                console.log("This is post ctrl object", post)
-                console.log("This is post ctrl object", post.username)
-                console.log("This is post ctrl object", post.body)
-                console.log("This is post ctrl object", post.dogname)
                 $scope.postBody=null
             })
         }
