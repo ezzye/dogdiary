@@ -4,7 +4,8 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }).then(function (dog) {
+            }).then(function () {
+                $scope.currentUser.dogname = $scope.dogname
                 $location.path('/')
             })
     }        
