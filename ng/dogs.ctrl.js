@@ -4,10 +4,9 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }).then(function ($scope)
+            }).then(function (dog)
             {
-                var dogName = $scope.dogname
-                $scope.$emit('addDog',dogName )
+                $scope.$emit('addDog',dog)
                 $scope.dogname=null
                 $location.path('/')
             })
