@@ -33,7 +33,14 @@ router.post('/', function (req, res, next) {
 
 
 router.put('/', function(req, res, next) {
-    User.findOne({username: req.body.username})
+    User.findOne({username: req.body.username}, function (err, user) {
+        if (err) { return next(err) }
+        user.dogname = req.body.dogname
+        user.save(function (err) {
+            if (err) { return next(err) }
+        })
+        res.send(201)
+    })   
 })
 
 module.exports =router
