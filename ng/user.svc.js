@@ -27,7 +27,7 @@ angular.module('app')
         })
     }
     
-    scv.updatedog = function (username, dogname) {
+    svc.updatedog = function (username, dogname) {
         return $http.put('/api/user', {
             username: username,
             dogname: dogname
