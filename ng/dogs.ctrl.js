@@ -4,11 +4,11 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }).then(function (dog) {
+            }).then(function ($scope.dogname) {
                 console.log("This is the scope dogs name",$scope.dogname)
-                console.log("This is the dogs object",dog)
-                console.log("This is the object  dogs name",dog.dogname)
-                $scope.emit('dogcreate',dog)
+                console.log("This is the dogs object",dogname)
+                console.log("This is the object  dogs name",dog.body.dogname)
+                $scope.emit('dogcreate',$scope.dogname)
                 $location.path('/')
             })
     }        
