@@ -4,8 +4,10 @@ angular.module('app')
             DogsSvc.create({
                 dogname: $scope.dogname,
                 ownername: $scope.currentUser.username
-            }).then(function () {
+            }).then(function (UserSvc) {
+                console.log("This is the dogs name",$scope.dogname)
                 $scope.currentUser.dogname = $scope.dogname
+                UserSvc.updatedog($scope.currentUser.username, $scope.currentUser.dogname )
                 $location.path('/')
             })
     }        
