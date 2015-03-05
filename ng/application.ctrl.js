@@ -4,9 +4,8 @@ angular.module('app')
         $scope.currentUser = user
     })
     
-    $scope.$on('addDog', function (_, dog) {
-        $scope.currentDog = dog
-        console.log("This is the dog",$scope.currentDog.dogname)
-        console.log("This is the dog object", dog)
+    $scope.$on('dogcreate', function () {
+        $scope.currentDog = $scope.dogname
+        console.log("This is the current dog",$scope.currentDog)
     })
 })
