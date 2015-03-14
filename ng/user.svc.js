@@ -27,10 +27,4 @@ angular.module('app')
         })
     }
     
-    svc.updatedog = function (username, dogname) {
-        return $http.put('/api/user', {
-            username: username,
-            dogname: dogname
-        })
-    }
 })
