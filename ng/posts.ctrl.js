@@ -22,5 +22,7 @@ angular.module('app')
         $scope.posts = posts
     })
     
+    
+    
 
 })
