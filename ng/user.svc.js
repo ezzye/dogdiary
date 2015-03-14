@@ -27,4 +27,10 @@ angular.module('app')
         })
     }
     
+    svc.test = function () {
+        return svc.getUser()
+        .then(function(response){
+            console.log(response)
+        })
+    }
 })
