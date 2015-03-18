@@ -2,6 +2,7 @@ var chai = require('chai')
 chai.use(require('chai-as-promised'))
 var expect = require('chai').expect
 
+var db = require('../../db')
 
 describe('making a post', function() {
     it('creates an account and a new post', function() {
@@ -25,5 +26,9 @@ describe('making a post', function() {
         // the user should now see their post as the first post on the page
         expect(element.all(by.css('ul.list-group li')).first()
             .getText()).to.eventually.contain(post)
+            
+        afterEach(function() {
+            db.connection.db.dropDatabase()
+        })
     })
 })
